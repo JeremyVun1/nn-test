@@ -1,7 +1,9 @@
 from random import randint
+from net import NeuralNetwork
 import numpy as np
 
-def test_nn(nn):
+def test_nn():
+    nn = NeuralNetwork()
     test_1(nn)
     test_2(nn)
     test_3(nn)
