@@ -4,8 +4,10 @@ from .net import NeuralNetwork
 from .data import get_data
 from .util import plot_graph
 
-def main():
+def train():
     nn = NeuralNetwork()
+    shape = [1, 10, 1]
+    nn.init(shape)
 
     avg_losses = []
 

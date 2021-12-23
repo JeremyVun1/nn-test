@@ -8,7 +8,7 @@ def avg(m, new, n):
 
 def plot_graph(*data):
     plt.clf()
-    plt.rcParams["figure.figsize"] = (4, 2)
+    #plt.rcParams["figure.figsize"] = (4, 2)
     plt.rcParams['toolbar'] = 'None'
     for d in data:
         plt.plot(d)

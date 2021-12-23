@@ -5,8 +5,8 @@ description = ""
 authors = ["jeremy vun <jeremy.vun@outlook.com>"]
 
 [tool.poetry.scripts]
-test = "tests.tests:run_tests"
-start = "nn.main:main"
+test = "tests.runner:run"
+nn = "nn.runner:run"
 
 [tool.poetry.dependencies]
 python = "3.10"

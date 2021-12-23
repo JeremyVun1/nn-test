@@ -2,15 +2,17 @@ import numpy as np
 import math
 
 class NeuralNetwork:
-    def __init__(self):
-        self.weights = [
-            np.random.rand(1, 10),
-            np.random.rand(10, 1)
-            #np.random.rand(10, 1)
-        ]
+    def init(self, shape):
+        if len(shape) < 2:
+            raise ValueError("Must have atleast 2 layers")
 
-    def train(self, data, labels):
-        pass
+        self.weights = [np.random.rand(shape[0], shape[1])]
+        for i in range(1, len(shape)-1):
+            self.weights.append(np.random.rand(shape[i], shape[i+1]))
+
+    def train(self, dataset):
+        predictions = self.predict(dataset.data)
+        losses = self.calc_losses(predictions, dataset.labels)
 
     def predict(self, data):
         predictions = []
