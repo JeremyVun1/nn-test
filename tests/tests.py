@@ -1,16 +1,19 @@
 from random import randint
-from net import NeuralNetwork
 import numpy as np
 
-def test_nn():
-    nn = NeuralNetwork()
-    test_1(nn)
-    test_2(nn)
-    test_3(nn)
-    print("Tests succesful!")
-    input()
+from nn.net import NeuralNetwork
 
-def test_1(nn):
+def run_tests():
+    nn = NeuralNetwork()
+
+    test_calc_loss_1(nn)
+    test_calc_loss_2(nn)
+    test_calc_loss_3(nn)
+
+    print("Tests succesful!")
+
+
+def test_calc_loss_1(nn):
     n = 10000
     data = [randint(0, 10000) * 2 for _ in range(n)]
     labels = data
@@ -22,7 +25,7 @@ def test_1(nn):
     assert np.array_equal(actual, expected)
 
 
-def test_2(nn):
+def test_calc_loss_2(nn):
     data = [5, 4, 3, 2, 1]
     labels = [5, 4, 3, 2, 1]
     expected = [0, 0, 0, 0, 0]
@@ -31,7 +34,7 @@ def test_2(nn):
     assert len(actual) == len(expected)
     assert np.array_equal(actual, expected)
 
-def test_3(nn):
+def test_calc_loss_3(nn):
     data = [5, 4, 3, 2, 1]
     labels = [0, 0, 0, 0, 0]
     expected = data

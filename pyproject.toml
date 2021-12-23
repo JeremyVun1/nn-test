@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["jeremy vun <jeremy.vun@outlook.com>"]
 
+[tool.poetry.scripts]
+test = "tests.tests:run_tests"
+start = "nn.main:main"
+
 [tool.poetry.dependencies]
 python = "3.10"
 matplotlib = "^3.5.1"

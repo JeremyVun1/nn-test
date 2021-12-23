@@ -1,3 +1,5 @@
+from random import randint
+
 class TestData:
     def __init__(self):
         self.data = []

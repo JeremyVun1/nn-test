@@ -1,9 +1,8 @@
 import numpy as np
 
-from data import get_data
-from net import NeuralNetwork
-from tests import test_nn
-from util import plot_graph
+from .net import NeuralNetwork
+from .data import get_data
+from .util import plot_graph
 
 def main():
     nn = NeuralNetwork()
@@ -19,8 +18,3 @@ def main():
 
         avg_losses.append(np.average(losses))
         plot_graph(avg_losses)
-
-
-if __name__ == "__main__":
-    test_nn()
-    main()
